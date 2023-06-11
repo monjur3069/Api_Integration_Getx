@@ -1,637 +1,551 @@
 class HomeModel {
   HomeModel({
-      this.id, 
-      this.mainTitle, 
-      this.subTitle, 
-      this.price, 
-      this.location, 
-      this.city, 
-      this.discount, 
-      this.startDate, 
-      this.endDate, 
-      this.tripType, 
-      this.country, 
-      this.availableSeats, 
-      this.minimumAge, 
-      this.maximumAge, 
-      this.totalDuration, 
-      this.packageOverview, 
-      this.availability, 
-      this.showpackage, 
-      this.flight, 
-      this.food, 
-      this.transport, 
-      this.hotel, 
-      this.coverimageurl, 
-      this.mainimage, 
-      this.hasMainimage, 
-      this.albumImages, 
-      this.hasAlbumImages, 
-      this.tourpackageplans, 
-      this.hasTourpackageplans, 
-      this.highlights, 
-      this.hasHighlights, 
-      this.vistitedImages, 
-      this.hasVistitedImages, 
-      this.packageInclusions, 
-      this.hasPackageInclusions, 
-      this.exclusions, 
-      this.hasExclusions, 
-      this.refundpolicys, 
-      this.hasRefundpolicys, 
-      this.bookingPolicys, 
-      this.hasBookingPolicys, 
-      this.installments, 
-      this.hasInstallments,});
+      this.status, 
+      this.data,});
 
   HomeModel.fromJson(dynamic json) {
-    id = json['Id'];
-    mainTitle = json['MainTitle'];
-    subTitle = json['SubTitle'];
-    price = json['Price'];
-    location = json['Location'];
-    city = json['City'];
-    discount = json['Discount'];
-    startDate = json['StartDate'];
-    endDate = json['EndDate'];
-    tripType = json['TripType'];
-    country = json['Country'];
-    availableSeats = json['AvailableSeats'];
-    minimumAge = json['MinimumAge'];
-    maximumAge = json['MaximumAge'];
-    totalDuration = json['TotalDuration'];
-    packageOverview = json['PackageOverview'];
-    availability = json['Availability'];
-    showpackage = json['Showpackage'];
-    flight = json['Flight'];
-    food = json['Food'];
-    transport = json['Transport'];
-    hotel = json['Hotel'];
-    coverimageurl = json['coverimageurl'];
-    if (json['__mainimage__'] != null) {
-      mainimage = [];
-      json['__mainimage__'].forEach((v) {
-        mainimage?.add(Mainimage.fromJson(v));
-      });
-    }
-    hasMainimage = json['__has_mainimage__'];
-    if (json['__albumImages__'] != null) {
-      albumImages = [];
-      json['__albumImages__'].forEach((v) {
-        albumImages?.add(AlbumImages.fromJson(v));
-      });
-    }
-    hasAlbumImages = json['__has_albumImages__'];
-    if (json['__tourpackageplans__'] != null) {
-      tourpackageplans = [];
-      json['__tourpackageplans__'].forEach((v) {
-        tourpackageplans?.add(Tourpackageplans.fromJson(v));
-      });
-    }
-    hasTourpackageplans = json['__has_tourpackageplans__'];
-    if (json['__highlights__'] != null) {
-      highlights = [];
-      json['__highlights__'].forEach((v) {
-        highlights?.add(Highlights.fromJson(v));
-      });
-    }
-    hasHighlights = json['__has_highlights__'];
-    if (json['__vistitedImages__'] != null) {
-      vistitedImages = [];
-      json['__vistitedImages__'].forEach((v) {
-        vistitedImages?.add(VistitedImages.fromJson(v));
-      });
-    }
-    hasVistitedImages = json['__has_vistitedImages__'];
-    if (json['__PackageInclusions__'] != null) {
-      packageInclusions = [];
-      json['__PackageInclusions__'].forEach((v) {
-        packageInclusions?.add(PackageInclusions.fromJson(v));
-      });
-    }
-    hasPackageInclusions = json['__has_PackageInclusions__'];
-    if (json['__exclusions__'] != null) {
-      exclusions = [];
-      json['__exclusions__'].forEach((v) {
-        exclusions?.add(Exclusions.fromJson(v));
-      });
-    }
-    hasExclusions = json['__has_exclusions__'];
-    if (json['__refundpolicys__'] != null) {
-      refundpolicys = [];
-      json['__refundpolicys__'].forEach((v) {
-        refundpolicys?.add(Refundpolicys.fromJson(v));
-      });
-    }
-    hasRefundpolicys = json['__has_refundpolicys__'];
-    if (json['__BookingPolicys__'] != null) {
-      bookingPolicys = [];
-      json['__BookingPolicys__'].forEach((v) {
-        bookingPolicys?.add(BookingPolicys.fromJson(v));
-      });
-    }
-    hasBookingPolicys = json['__has_BookingPolicys__'];
-    if (json['__installments__'] != null) {
-      installments = [];
-      json['__installments__'].forEach((v) {
-        installments?.add(Installments.fromJson(v));
-      });
-    }
-    hasInstallments = json['__has_installments__'];
-  }
-  String? id;
-  String? mainTitle;
-  String? subTitle;
-  num? price;
-  String? location;
-  String? city;
-  num? discount;
-  String? startDate;
-  String? endDate;
-  String? tripType;
-  String? country;
-  num? availableSeats;
-  num? minimumAge;
-  num? maximumAge;
-  String? totalDuration;
-  String? packageOverview;
-  bool? availability;
-  bool? showpackage;
-  bool? flight;
-  bool? food;
-  bool? transport;
-  bool? hotel;
-  String? coverimageurl;
-  List<Mainimage>? mainimage;
-  bool? hasMainimage;
-  List<AlbumImages>? albumImages;
-  bool? hasAlbumImages;
-  List<Tourpackageplans>? tourpackageplans;
-  bool? hasTourpackageplans;
-  List<Highlights>? highlights;
-  bool? hasHighlights;
-  List<VistitedImages>? vistitedImages;
-  bool? hasVistitedImages;
-  List<PackageInclusions>? packageInclusions;
-  bool? hasPackageInclusions;
-  List<Exclusions>? exclusions;
-  bool? hasExclusions;
-  List<Refundpolicys>? refundpolicys;
-  bool? hasRefundpolicys;
-  List<BookingPolicys>? bookingPolicys;
-  bool? hasBookingPolicys;
-  List<Installments>? installments;
-  bool? hasInstallments;
-HomeModel copyWith({  String? id,
-  String? mainTitle,
-  String? subTitle,
-  num? price,
-  String? location,
-  String? city,
-  num? discount,
-  String? startDate,
-  String? endDate,
-  String? tripType,
-  String? country,
-  num? availableSeats,
-  num? minimumAge,
-  num? maximumAge,
-  String? totalDuration,
-  String? packageOverview,
-  bool? availability,
-  bool? showpackage,
-  bool? flight,
-  bool? food,
-  bool? transport,
-  bool? hotel,
-  String? coverimageurl,
-  List<Mainimage>? mainimage,
-  bool? hasMainimage,
-  List<AlbumImages>? albumImages,
-  bool? hasAlbumImages,
-  List<Tourpackageplans>? tourpackageplans,
-  bool? hasTourpackageplans,
-  List<Highlights>? highlights,
-  bool? hasHighlights,
-  List<VistitedImages>? vistitedImages,
-  bool? hasVistitedImages,
-  List<PackageInclusions>? packageInclusions,
-  bool? hasPackageInclusions,
-  List<Exclusions>? exclusions,
-  bool? hasExclusions,
-  List<Refundpolicys>? refundpolicys,
-  bool? hasRefundpolicys,
-  List<BookingPolicys>? bookingPolicys,
-  bool? hasBookingPolicys,
-  List<Installments>? installments,
-  bool? hasInstallments,
-}) => HomeModel(  id: id ?? this.id,
-  mainTitle: mainTitle ?? this.mainTitle,
-  subTitle: subTitle ?? this.subTitle,
-  price: price ?? this.price,
-  location: location ?? this.location,
-  city: city ?? this.city,
-  discount: discount ?? this.discount,
-  startDate: startDate ?? this.startDate,
-  endDate: endDate ?? this.endDate,
-  tripType: tripType ?? this.tripType,
-  country: country ?? this.country,
-  availableSeats: availableSeats ?? this.availableSeats,
-  minimumAge: minimumAge ?? this.minimumAge,
-  maximumAge: maximumAge ?? this.maximumAge,
-  totalDuration: totalDuration ?? this.totalDuration,
-  packageOverview: packageOverview ?? this.packageOverview,
-  availability: availability ?? this.availability,
-  showpackage: showpackage ?? this.showpackage,
-  flight: flight ?? this.flight,
-  food: food ?? this.food,
-  transport: transport ?? this.transport,
-  hotel: hotel ?? this.hotel,
-  coverimageurl: coverimageurl ?? this.coverimageurl,
-  mainimage: mainimage ?? this.mainimage,
-  hasMainimage: hasMainimage ?? this.hasMainimage,
-  albumImages: albumImages ?? this.albumImages,
-  hasAlbumImages: hasAlbumImages ?? this.hasAlbumImages,
-  tourpackageplans: tourpackageplans ?? this.tourpackageplans,
-  hasTourpackageplans: hasTourpackageplans ?? this.hasTourpackageplans,
-  highlights: highlights ?? this.highlights,
-  hasHighlights: hasHighlights ?? this.hasHighlights,
-  vistitedImages: vistitedImages ?? this.vistitedImages,
-  hasVistitedImages: hasVistitedImages ?? this.hasVistitedImages,
-  packageInclusions: packageInclusions ?? this.packageInclusions,
-  hasPackageInclusions: hasPackageInclusions ?? this.hasPackageInclusions,
-  exclusions: exclusions ?? this.exclusions,
-  hasExclusions: hasExclusions ?? this.hasExclusions,
-  refundpolicys: refundpolicys ?? this.refundpolicys,
-  hasRefundpolicys: hasRefundpolicys ?? this.hasRefundpolicys,
-  bookingPolicys: bookingPolicys ?? this.bookingPolicys,
-  hasBookingPolicys: hasBookingPolicys ?? this.hasBookingPolicys,
-  installments: installments ?? this.installments,
-  hasInstallments: hasInstallments ?? this.hasInstallments,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['Id'] = id;
-    map['MainTitle'] = mainTitle;
-    map['SubTitle'] = subTitle;
-    map['Price'] = price;
-    map['Location'] = location;
-    map['City'] = city;
-    map['Discount'] = discount;
-    map['StartDate'] = startDate;
-    map['EndDate'] = endDate;
-    map['TripType'] = tripType;
-    map['Country'] = country;
-    map['AvailableSeats'] = availableSeats;
-    map['MinimumAge'] = minimumAge;
-    map['MaximumAge'] = maximumAge;
-    map['TotalDuration'] = totalDuration;
-    map['PackageOverview'] = packageOverview;
-    map['Availability'] = availability;
-    map['Showpackage'] = showpackage;
-    map['Flight'] = flight;
-    map['Food'] = food;
-    map['Transport'] = transport;
-    map['Hotel'] = hotel;
-    map['coverimageurl'] = coverimageurl;
-    if (mainimage != null) {
-      map['__mainimage__'] = mainimage?.map((v) => v.toJson()).toList();
-    }
-    map['__has_mainimage__'] = hasMainimage;
-    if (albumImages != null) {
-      map['__albumImages__'] = albumImages?.map((v) => v.toJson()).toList();
-    }
-    map['__has_albumImages__'] = hasAlbumImages;
-    if (tourpackageplans != null) {
-      map['__tourpackageplans__'] = tourpackageplans?.map((v) => v.toJson()).toList();
-    }
-    map['__has_tourpackageplans__'] = hasTourpackageplans;
-    if (highlights != null) {
-      map['__highlights__'] = highlights?.map((v) => v.toJson()).toList();
-    }
-    map['__has_highlights__'] = hasHighlights;
-    if (vistitedImages != null) {
-      map['__vistitedImages__'] = vistitedImages?.map((v) => v.toJson()).toList();
-    }
-    map['__has_vistitedImages__'] = hasVistitedImages;
-    if (packageInclusions != null) {
-      map['__PackageInclusions__'] = packageInclusions?.map((v) => v.toJson()).toList();
-    }
-    map['__has_PackageInclusions__'] = hasPackageInclusions;
-    if (exclusions != null) {
-      map['__exclusions__'] = exclusions?.map((v) => v.toJson()).toList();
-    }
-    map['__has_exclusions__'] = hasExclusions;
-    if (refundpolicys != null) {
-      map['__refundpolicys__'] = refundpolicys?.map((v) => v.toJson()).toList();
-    }
-    map['__has_refundpolicys__'] = hasRefundpolicys;
-    if (bookingPolicys != null) {
-      map['__BookingPolicys__'] = bookingPolicys?.map((v) => v.toJson()).toList();
-    }
-    map['__has_BookingPolicys__'] = hasBookingPolicys;
-    if (installments != null) {
-      map['__installments__'] = installments?.map((v) => v.toJson()).toList();
-    }
-    map['__has_installments__'] = hasInstallments;
-    return map;
-  }
-
-}
-
-class Installments {
-  Installments({
-      this.installmentId, 
-      this.name, 
-      this.date, 
-      this.amount, 
-      this.totalAmount, 
-      this.status,});
-
-  Installments.fromJson(dynamic json) {
-    installmentId = json['InstallmentId'];
-    name = json['Name'];
-    date = json['Date'];
-    amount = json['Amount'];
-    totalAmount = json['TotalAmount'];
     status = json['status'];
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
-  num? installmentId;
-  String? name;
-  String? date;
-  num? amount;
-  dynamic totalAmount;
   String? status;
-Installments copyWith({  num? installmentId,
-  String? name,
-  String? date,
-  num? amount,
-  dynamic totalAmount,
-  String? status,
-}) => Installments(  installmentId: installmentId ?? this.installmentId,
-  name: name ?? this.name,
-  date: date ?? this.date,
-  amount: amount ?? this.amount,
-  totalAmount: totalAmount ?? this.totalAmount,
-  status: status ?? this.status,
+  Data? data;
+HomeModel copyWith({  String? status,
+  Data? data,
+}) => HomeModel(  status: status ?? this.status,
+  data: data ?? this.data,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['InstallmentId'] = installmentId;
-    map['Name'] = name;
-    map['Date'] = date;
-    map['Amount'] = amount;
-    map['TotalAmount'] = totalAmount;
     map['status'] = status;
+    if (data != null) {
+      map['data'] = data?.toJson();
+    }
     return map;
   }
 
 }
 
-class BookingPolicys {
-  BookingPolicys({
-      this.bkId, 
-      this.description,});
+class Data {
+  Data({
+      this.categories, 
+      this.products,});
 
-  BookingPolicys.fromJson(dynamic json) {
-    bkId = json['BkId'];
+  Data.fromJson(dynamic json) {
+    if (json['categories'] != null) {
+      categories = [];
+      json['categories'].forEach((v) {
+        categories?.add(Dynamic.fromJson(v));
+      });
+    }
+    products = json['products'] != null ? Products.fromJson(json['products']) : null;
+  }
+  List<dynamic>? categories;
+  Products? products;
+Data copyWith({  List<dynamic>? categories,
+  Products? products,
+}) => Data(  categories: categories ?? this.categories,
+  products: products ?? this.products,
+);
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    if (categories != null) {
+      map['categories'] = categories?.map((v) => v.toJson()).toList();
+    }
+    if (products != null) {
+      map['products'] = products?.toJson();
+    }
+    return map;
+  }
+
+}
+
+class Dynamic {
+  static fromJson(v) {}
+}
+
+class Products {
+  Products({
+      this.count, 
+      this.next, 
+      this.previous, 
+      this.results,});
+
+  Products.fromJson(dynamic json) {
+    count = json['count'];
+    next = json['next'];
+    previous = json['previous'];
+    if (json['results'] != null) {
+      results = [];
+      json['results'].forEach((v) {
+        results?.add(Results.fromJson(v));
+      });
+    }
+  }
+  num? count;
+  String? next;
+  String? previous;
+  List<Results>? results;
+Products copyWith({  num? count,
+  String? next,
+  String? previous,
+  List<Results>? results,
+}) => Products(  count: count ?? this.count,
+  next: next ?? this.next,
+  previous: previous ?? this.previous,
+  results: results ?? this.results,
+);
+  Map<String, dynamic> toJson() {
+    final map = <String, dynamic>{};
+    map['count'] = count;
+    map['next'] = next;
+    map['previous'] = previous;
+    if (results != null) {
+      map['results'] = results?.map((v) => v.toJson()).toList();
+    }
+    return map;
+  }
+
+}
+
+class Results {
+  Results({
+      this.id, 
+      this.brand, 
+      this.image, 
+      this.charge, 
+      this.images, 
+      this.distributors, 
+      this.slug, 
+      this.productName, 
+      this.model, 
+      this.commissionType, 
+      this.amount, 
+      this.tag, 
+      this.description, 
+      this.note, 
+      this.embaddedVideoLink, 
+      this.maximumOrder, 
+      this.stock, 
+      this.isBackOrder, 
+      this.specification, 
+      this.warranty, 
+      this.preOrder, 
+      this.productReview, 
+      this.isSeller, 
+      this.isPhone, 
+      this.willShowEmi, 
+      this.badge, 
+      this.isActive, 
+      this.sackEquivalent, 
+      this.createdAt, 
+      this.updatedAt, 
+      this.language, 
+      this.seller, 
+      this.combo, 
+      this.createdBy, 
+      this.updatedBy, 
+      this.category, 
+      this.relatedProduct, 
+      this.filterValue,});
+
+  Results.fromJson(dynamic json) {
+    id = json['id'];
+    brand = json['brand'] != null ? Brand.fromJson(json['brand']) : null;
+    image = json['image'];
+    charge = json['charge'] != null ? Charge.fromJson(json['charge']) : null;
+    if (json['images'] != null) {
+      images = [];
+      json['images'].forEach((v) {
+        images?.add(Images.fromJson(v));
+      });
+    }
+    if (json['distributors'] != null) {
+      distributors = [];
+      json['distributors'].forEach((v) {
+        distributors?.add(Dynamic.fromJson(v));
+      });
+    }
+    slug = json['slug'];
+    productName = json['product_name'];
+    model = json['model'];
+    commissionType = json['commission_type'];
+    amount = json['amount'];
+    tag = json['tag'];
     description = json['description'];
+    note = json['note'];
+    embaddedVideoLink = json['embadded_video_link'];
+    maximumOrder = json['maximum_order'];
+    stock = json['stock'];
+    isBackOrder = json['is_back_order'];
+    specification = json['specification'];
+    warranty = json['warranty'];
+    preOrder = json['pre_order'];
+    productReview = json['product_review'];
+    isSeller = json['is_seller'];
+    isPhone = json['is_phone'];
+    willShowEmi = json['will_show_emi'];
+    badge = json['badge'];
+    isActive = json['is_active'];
+    sackEquivalent = json['sack_equivalent'];
+    createdAt = json['created_at'];
+    updatedAt = json['updated_at'];
+    language = json['language'];
+    seller = json['seller'];
+    combo = json['combo'];
+    createdBy = json['created_by'];
+    updatedBy = json['updated_by'];
+    category = json['category'] != null ? json['category'].cast<num>() : [];
+    if (json['related_product'] != null) {
+      relatedProduct = [];
+      json['related_product'].forEach((v) {
+        relatedProduct?.add(Dynamic.fromJson(v));
+      });
+    }
+    if (json['filter_value'] != null) {
+      filterValue = [];
+      json['filter_value'].forEach((v) {
+        filterValue?.add(Dynamic.fromJson(v));
+      });
+    }
   }
-  num? bkId;
+  num? id;
+  Brand? brand;
+  String? image;
+  Charge? charge;
+  List<Images>? images;
+  List<dynamic>? distributors;
+  String? slug;
+  String? productName;
+  String? model;
+  String? commissionType;
+  String? amount;
+  String? tag;
   String? description;
-BookingPolicys copyWith({  num? bkId,
+  String? note;
+  String? embaddedVideoLink;
+  num? maximumOrder;
+  num? stock;
+  bool? isBackOrder;
+  String? specification;
+  String? warranty;
+  bool? preOrder;
+  num? productReview;
+  bool? isSeller;
+  bool? isPhone;
+  bool? willShowEmi;
+  dynamic badge;
+  bool? isActive;
+  String? sackEquivalent;
+  String? createdAt;
+  String? updatedAt;
+  dynamic language;
+  String? seller;
+  dynamic combo;
+  String? createdBy;
+  dynamic updatedBy;
+  List<num>? category;
+  List<dynamic>? relatedProduct;
+  List<dynamic>? filterValue;
+Results copyWith({  num? id,
+  Brand? brand,
+  String? image,
+  Charge? charge,
+  List<Images>? images,
+  List<dynamic>? distributors,
+  String? slug,
+  String? productName,
+  String? model,
+  String? commissionType,
+  String? amount,
+  String? tag,
   String? description,
-}) => BookingPolicys(  bkId: bkId ?? this.bkId,
+  String? note,
+  String? embaddedVideoLink,
+  num? maximumOrder,
+  num? stock,
+  bool? isBackOrder,
+  String? specification,
+  String? warranty,
+  bool? preOrder,
+  num? productReview,
+  bool? isSeller,
+  bool? isPhone,
+  bool? willShowEmi,
+  dynamic badge,
+  bool? isActive,
+  String? sackEquivalent,
+  String? createdAt,
+  String? updatedAt,
+  dynamic language,
+  String? seller,
+  dynamic combo,
+  String? createdBy,
+  dynamic updatedBy,
+  List<num>? category,
+  List<dynamic>? relatedProduct,
+  List<dynamic>? filterValue,
+}) => Results(  id: id ?? this.id,
+  brand: brand ?? this.brand,
+  image: image ?? this.image,
+  charge: charge ?? this.charge,
+  images: images ?? this.images,
+  distributors: distributors ?? this.distributors,
+  slug: slug ?? this.slug,
+  productName: productName ?? this.productName,
+  model: model ?? this.model,
+  commissionType: commissionType ?? this.commissionType,
+  amount: amount ?? this.amount,
+  tag: tag ?? this.tag,
   description: description ?? this.description,
+  note: note ?? this.note,
+  embaddedVideoLink: embaddedVideoLink ?? this.embaddedVideoLink,
+  maximumOrder: maximumOrder ?? this.maximumOrder,
+  stock: stock ?? this.stock,
+  isBackOrder: isBackOrder ?? this.isBackOrder,
+  specification: specification ?? this.specification,
+  warranty: warranty ?? this.warranty,
+  preOrder: preOrder ?? this.preOrder,
+  productReview: productReview ?? this.productReview,
+  isSeller: isSeller ?? this.isSeller,
+  isPhone: isPhone ?? this.isPhone,
+  willShowEmi: willShowEmi ?? this.willShowEmi,
+  badge: badge ?? this.badge,
+  isActive: isActive ?? this.isActive,
+  sackEquivalent: sackEquivalent ?? this.sackEquivalent,
+  createdAt: createdAt ?? this.createdAt,
+  updatedAt: updatedAt ?? this.updatedAt,
+  language: language ?? this.language,
+  seller: seller ?? this.seller,
+  combo: combo ?? this.combo,
+  createdBy: createdBy ?? this.createdBy,
+  updatedBy: updatedBy ?? this.updatedBy,
+  category: category ?? this.category,
+  relatedProduct: relatedProduct ?? this.relatedProduct,
+  filterValue: filterValue ?? this.filterValue,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['BkId'] = bkId;
+    map['id'] = id;
+    if (brand != null) {
+      map['brand'] = brand?.toJson();
+    }
+    map['image'] = image;
+    if (charge != null) {
+      map['charge'] = charge?.toJson();
+    }
+    if (images != null) {
+      map['images'] = images?.map((v) => v.toJson()).toList();
+    }
+    if (distributors != null) {
+      map['distributors'] = distributors?.map((v) => v.toJson()).toList();
+    }
+    map['slug'] = slug;
+    map['product_name'] = productName;
+    map['model'] = model;
+    map['commission_type'] = commissionType;
+    map['amount'] = amount;
+    map['tag'] = tag;
     map['description'] = description;
+    map['note'] = note;
+    map['embadded_video_link'] = embaddedVideoLink;
+    map['maximum_order'] = maximumOrder;
+    map['stock'] = stock;
+    map['is_back_order'] = isBackOrder;
+    map['specification'] = specification;
+    map['warranty'] = warranty;
+    map['pre_order'] = preOrder;
+    map['product_review'] = productReview;
+    map['is_seller'] = isSeller;
+    map['is_phone'] = isPhone;
+    map['will_show_emi'] = willShowEmi;
+    map['badge'] = badge;
+    map['is_active'] = isActive;
+    map['sack_equivalent'] = sackEquivalent;
+    map['created_at'] = createdAt;
+    map['updated_at'] = updatedAt;
+    map['language'] = language;
+    map['seller'] = seller;
+    map['combo'] = combo;
+    map['created_by'] = createdBy;
+    map['updated_by'] = updatedBy;
+    map['category'] = category;
+    if (relatedProduct != null) {
+      map['related_product'] = relatedProduct?.map((v) => v.toJson()).toList();
+    }
+    if (filterValue != null) {
+      map['filter_value'] = filterValue?.map((v) => v.toJson()).toList();
+    }
     return map;
   }
 
 }
 
-class Refundpolicys {
-  Refundpolicys({
-      this.rId, 
-      this.refundPolicy,});
+class Images {
+  Images({
+      this.id, 
+      this.image, 
+      this.isPrimary, 
+      this.product,});
 
-  Refundpolicys.fromJson(dynamic json) {
-    rId = json['RId'];
-    refundPolicy = json['RefundPolicy'];
+  Images.fromJson(dynamic json) {
+    id = json['id'];
+    image = json['image'];
+    isPrimary = json['is_primary'];
+    product = json['product'];
   }
-  num? rId;
-  String? refundPolicy;
-Refundpolicys copyWith({  num? rId,
-  String? refundPolicy,
-}) => Refundpolicys(  rId: rId ?? this.rId,
-  refundPolicy: refundPolicy ?? this.refundPolicy,
+  num? id;
+  String? image;
+  bool? isPrimary;
+  num? product;
+Images copyWith({  num? id,
+  String? image,
+  bool? isPrimary,
+  num? product,
+}) => Images(  id: id ?? this.id,
+  image: image ?? this.image,
+  isPrimary: isPrimary ?? this.isPrimary,
+  product: product ?? this.product,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['RId'] = rId;
-    map['RefundPolicy'] = refundPolicy;
+    map['id'] = id;
+    map['image'] = image;
+    map['is_primary'] = isPrimary;
+    map['product'] = product;
     return map;
   }
 
 }
 
-class Exclusions {
-  Exclusions({
-      this.exId, 
-      this.packageExclusions,});
+class Charge {
+  Charge({
+      this.bookingPrice, 
+      this.currentCharge, 
+      this.discountCharge, 
+      this.sellingPrice, 
+      this.profit, 
+      this.isEvent, 
+      this.eventId, 
+      this.highlight, 
+      this.highlightId, 
+      this.groupping, 
+      this.grouppingId, 
+      this.campaignSectionId, 
+      this.campaignSection, 
+      this.message,});
 
-  Exclusions.fromJson(dynamic json) {
-    exId = json['ExId'];
-    packageExclusions = json['PackageExclusions'];
+  Charge.fromJson(dynamic json) {
+    bookingPrice = json['booking_price'];
+    currentCharge = json['current_charge'];
+    discountCharge = json['discount_charge'];
+    sellingPrice = json['selling_price'];
+    profit = json['profit'];
+    isEvent = json['is_event'];
+    eventId = json['event_id'];
+    highlight = json['highlight'];
+    highlightId = json['highlight_id'];
+    groupping = json['groupping'];
+    grouppingId = json['groupping_id'];
+    campaignSectionId = json['campaign_section_id'];
+    campaignSection = json['campaign_section'];
+    message = json['message'];
   }
-  num? exId;
-  String? packageExclusions;
-Exclusions copyWith({  num? exId,
-  String? packageExclusions,
-}) => Exclusions(  exId: exId ?? this.exId,
-  packageExclusions: packageExclusions ?? this.packageExclusions,
+  num? bookingPrice;
+  num? currentCharge;
+  dynamic discountCharge;
+  num? sellingPrice;
+  num? profit;
+  bool? isEvent;
+  dynamic eventId;
+  bool? highlight;
+  dynamic highlightId;
+  bool? groupping;
+  dynamic grouppingId;
+  dynamic campaignSectionId;
+  bool? campaignSection;
+  dynamic message;
+Charge copyWith({  num? bookingPrice,
+  num? currentCharge,
+  dynamic discountCharge,
+  num? sellingPrice,
+  num? profit,
+  bool? isEvent,
+  dynamic eventId,
+  bool? highlight,
+  dynamic highlightId,
+  bool? groupping,
+  dynamic grouppingId,
+  dynamic campaignSectionId,
+  bool? campaignSection,
+  dynamic message,
+}) => Charge(  bookingPrice: bookingPrice ?? this.bookingPrice,
+  currentCharge: currentCharge ?? this.currentCharge,
+  discountCharge: discountCharge ?? this.discountCharge,
+  sellingPrice: sellingPrice ?? this.sellingPrice,
+  profit: profit ?? this.profit,
+  isEvent: isEvent ?? this.isEvent,
+  eventId: eventId ?? this.eventId,
+  highlight: highlight ?? this.highlight,
+  highlightId: highlightId ?? this.highlightId,
+  groupping: groupping ?? this.groupping,
+  grouppingId: grouppingId ?? this.grouppingId,
+  campaignSectionId: campaignSectionId ?? this.campaignSectionId,
+  campaignSection: campaignSection ?? this.campaignSection,
+  message: message ?? this.message,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['ExId'] = exId;
-    map['PackageExclusions'] = packageExclusions;
+    map['booking_price'] = bookingPrice;
+    map['current_charge'] = currentCharge;
+    map['discount_charge'] = discountCharge;
+    map['selling_price'] = sellingPrice;
+    map['profit'] = profit;
+    map['is_event'] = isEvent;
+    map['event_id'] = eventId;
+    map['highlight'] = highlight;
+    map['highlight_id'] = highlightId;
+    map['groupping'] = groupping;
+    map['groupping_id'] = grouppingId;
+    map['campaign_section_id'] = campaignSectionId;
+    map['campaign_section'] = campaignSection;
+    map['message'] = message;
     return map;
   }
 
 }
 
-class PackageInclusions {
-  PackageInclusions({
-      this.inId, 
-      this.inclusions,});
+class Brand {
+  Brand({
+      this.name, 
+      this.image, 
+      this.headerImage, 
+      this.slug,});
 
-  PackageInclusions.fromJson(dynamic json) {
-    inId = json['InId'];
-    inclusions = json['Inclusions'];
+  Brand.fromJson(dynamic json) {
+    name = json['name'];
+    image = json['image'];
+    headerImage = json['header_image'];
+    slug = json['slug'];
   }
-  num? inId;
-  String? inclusions;
-PackageInclusions copyWith({  num? inId,
-  String? inclusions,
-}) => PackageInclusions(  inId: inId ?? this.inId,
-  inclusions: inclusions ?? this.inclusions,
+  String? name;
+  String? image;
+  dynamic headerImage;
+  String? slug;
+Brand copyWith({  String? name,
+  String? image,
+  dynamic headerImage,
+  String? slug,
+}) => Brand(  name: name ?? this.name,
+  image: image ?? this.image,
+  headerImage: headerImage ?? this.headerImage,
+  slug: slug ?? this.slug,
 );
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['InId'] = inId;
-    map['Inclusions'] = inclusions;
-    return map;
-  }
-
-}
-
-class VistitedImages {
-  VistitedImages({
-      this.vimageId, 
-      this.placeName, 
-      this.visitedImagePath,});
-
-  VistitedImages.fromJson(dynamic json) {
-    vimageId = json['VimageId'];
-    placeName = json['PlaceName'];
-    visitedImagePath = json['VisitedImagePath'];
-  }
-  num? vimageId;
-  String? placeName;
-  String? visitedImagePath;
-VistitedImages copyWith({  num? vimageId,
-  String? placeName,
-  String? visitedImagePath,
-}) => VistitedImages(  vimageId: vimageId ?? this.vimageId,
-  placeName: placeName ?? this.placeName,
-  visitedImagePath: visitedImagePath ?? this.visitedImagePath,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['VimageId'] = vimageId;
-    map['PlaceName'] = placeName;
-    map['VisitedImagePath'] = visitedImagePath;
-    return map;
-  }
-
-}
-
-class Highlights {
-  Highlights({
-      this.hiId, 
-      this.description,});
-
-  Highlights.fromJson(dynamic json) {
-    hiId = json['HiId'];
-    description = json['description'];
-  }
-  num? hiId;
-  String? description;
-Highlights copyWith({  num? hiId,
-  String? description,
-}) => Highlights(  hiId: hiId ?? this.hiId,
-  description: description ?? this.description,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['HiId'] = hiId;
-    map['description'] = description;
-    return map;
-  }
-
-}
-
-class Tourpackageplans {
-  Tourpackageplans({
-      this.dayId, 
-      this.title, 
-      this.dayplan,});
-
-  Tourpackageplans.fromJson(dynamic json) {
-    dayId = json['dayId'];
-    title = json['Title'];
-    dayplan = json['dayplan'];
-  }
-  num? dayId;
-  String? title;
-  String? dayplan;
-Tourpackageplans copyWith({  num? dayId,
-  String? title,
-  String? dayplan,
-}) => Tourpackageplans(  dayId: dayId ?? this.dayId,
-  title: title ?? this.title,
-  dayplan: dayplan ?? this.dayplan,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['dayId'] = dayId;
-    map['Title'] = title;
-    map['dayplan'] = dayplan;
-    return map;
-  }
-
-}
-
-class AlbumImages {
-  AlbumImages({
-      this.albumId, 
-      this.albumTitle, 
-      this.albumImageUrl,});
-
-  AlbumImages.fromJson(dynamic json) {
-    albumId = json['AlbumId'];
-    albumTitle = json['AlbumTitle'];
-    albumImageUrl = json['albumImageUrl'];
-  }
-  num? albumId;
-  String? albumTitle;
-  String? albumImageUrl;
-AlbumImages copyWith({  num? albumId,
-  String? albumTitle,
-  String? albumImageUrl,
-}) => AlbumImages(  albumId: albumId ?? this.albumId,
-  albumTitle: albumTitle ?? this.albumTitle,
-  albumImageUrl: albumImageUrl ?? this.albumImageUrl,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['AlbumId'] = albumId;
-    map['AlbumTitle'] = albumTitle;
-    map['albumImageUrl'] = albumImageUrl;
-    return map;
-  }
-
-}
-
-class Mainimage {
-  Mainimage({
-      this.mainimgId, 
-      this.mainImageTitle, 
-      this.mainImageUrl,});
-
-  Mainimage.fromJson(dynamic json) {
-    mainimgId = json['mainimgId'];
-    mainImageTitle = json['MainImageTitle'];
-    mainImageUrl = json['MainImageUrl'];
-  }
-  num? mainimgId;
-  String? mainImageTitle;
-  String? mainImageUrl;
-Mainimage copyWith({  num? mainimgId,
-  String? mainImageTitle,
-  String? mainImageUrl,
-}) => Mainimage(  mainimgId: mainimgId ?? this.mainimgId,
-  mainImageTitle: mainImageTitle ?? this.mainImageTitle,
-  mainImageUrl: mainImageUrl ?? this.mainImageUrl,
-);
-  Map<String, dynamic> toJson() {
-    final map = <String, dynamic>{};
-    map['mainimgId'] = mainimgId;
-    map['MainImageTitle'] = mainImageTitle;
-    map['MainImageUrl'] = mainImageUrl;
+    map['name'] = name;
+    map['image'] = image;
+    map['header_image'] = headerImage;
+    map['slug'] = slug;
     return map;
   }
 
